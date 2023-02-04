@@ -8,6 +8,22 @@
 
 config_version=4
 
+_global_script_classes=[ {
+"base": "Sprite",
+"class": "Puddle",
+"language": "GDScript",
+"path": "res://scripts/Puddle.gd"
+}, {
+"base": "Sprite",
+"class": "Root",
+"language": "GDScript",
+"path": "res://scripts/Root.gd"
+} ]
+_global_script_class_icons={
+"Puddle": "",
+"Root": ""
+}
+
 [application]
 
 config/name="Roots"

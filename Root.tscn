@@ -4,10 +4,10 @@
 [ext_resource path="res://scripts/Root.gd" type="Script" id=2]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 243.495, 190 )
+extents = Vector2( 222.376, 272.824 )
 
-[sub_resource type="CircleShape2D" id=2]
-radius = 100.0
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 44.0922, 155.731 )
 
 [node name="Root" type="Sprite"]
 position = Vector2( 2.11758e-22, 9 )
@@ -22,7 +22,7 @@ script = ExtResource( 2 )
 scale = Vector2( -2.01236, 0.733074 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox"]
-position = Vector2( -253.434, 27.2823 )
+position = Vector2( -279.523, 0 )
 shape = SubResource( 1 )
 
 [node name="Point" type="Area2D" parent="."]
@@ -30,5 +30,8 @@ position = Vector2( 1005, 0 )
 scale = Vector2( -2.06953, 1.99061 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Point"]
-scale = Vector2( -0.283655, -1.02249 )
+position = Vector2( 476.558, 0 )
 shape = SubResource( 2 )
+
+[connection signal="area_entered" from="Point" to="." method="_on_Point_area_entered"]
+[connection signal="area_exited" from="Point" to="." method="_on_Point_area_exited"]

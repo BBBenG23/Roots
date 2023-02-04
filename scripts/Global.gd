@@ -13,3 +13,4 @@ func _unhandled_input(event):
 
 
 var Overlay = null
+var player = null

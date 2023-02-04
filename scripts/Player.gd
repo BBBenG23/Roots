@@ -8,10 +8,12 @@ export var max_health : int
 var water : int
 var health : int
 var root = null
+var shooting = false
 
 func _ready():
 	water = max_water
 	health = max_health
+	Global.player = self
 
 func _physics_process(_delta):
 	var velocity = Vector2.ZERO
@@ -24,7 +26,7 @@ func _physics_process(_delta):
 	if Input.is_action_pressed("d"):
 		velocity += Vector2.RIGHT
 	velocity = velocity.normalized()
-	if root != null:
+	if root != null and !shooting:
 		var point = root.get_node("Point")
 		var dir = (global_position - point.global_position).normalized()
 		var parallel = dir.dot(velocity) * dir
@@ -37,21 +39,22 @@ func _physics_process(_delta):
 func _input(event):
 	if event.is_action_pressed("click"):
 		if water >= 10 and root == null:
+			shooting = true
 			root = Root.instance()
 			add_child(root)
 			root.shoot_to(get_global_mouse_position())
-			lose_water(10)
-		elif root != null:
+			change_water(-20)
+		elif root != null and !shooting:
 			root.connected = false
 			root = null
 
-func lose_water(amount):
-	if water < amount:
-		return
-	water -= amount
+func change_water(amount):
+	water += amount
+	# warning-ignore:narrowing_conversion
+	water = max(min(water, max_water), 0)
 	Global.Overlay.get_node("Water_bar").rect_scale.x = float(water) / max_water
 
-func lose_health(amount):
+func change_health(amount):
 	if health < amount:
 		return
 	health -= amount

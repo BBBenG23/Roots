@@ -26,5 +26,6 @@ position = Vector2( 423, 390 )
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="Overlay" parent="CanvasLayer" instance=ExtResource( 4 )]
-margin_right = 468.0
+anchor_right = 0.952
+margin_right = 517.152
 margin_bottom = 375.0
