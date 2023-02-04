@@ -9,16 +9,19 @@ extents = Vector2( 16, 21.5 )
 
 [node name="Player" type="KinematicBody2D"]
 script = ExtResource( 1 )
+speed = 150
+max_water = 100
+max_health = 100
 
-[node name="Camera2D" type="Camera2D" parent="."]
-smoothing_enabled = true
+[node name="Sprite" type="Sprite" parent="."]
+material = ExtResource( 3 )
+scale = Vector2( 0.05, 0.05 )
+texture = ExtResource( 2 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 visible = false
 scale = Vector2( 1.35, 1.61 )
 shape = SubResource( 1 )
 
-[node name="Sprite" type="Sprite" parent="."]
-material = ExtResource( 3 )
-scale = Vector2( 0.05, 0.05 )
-texture = ExtResource( 2 )
+[node name="Camera2D" type="Camera2D" parent="."]
+current = true

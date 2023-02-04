@@ -1,12 +1,16 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://sprites/carrot.jpg" type="Texture" id=1]
 [ext_resource path="res://scripts/Root.gd" type="Script" id=2]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 505, 190 )
+extents = Vector2( 243.495, 190 )
 
-[node name="Sprite" type="Sprite"]
+[sub_resource type="CircleShape2D" id=2]
+radius = 100.0
+
+[node name="Root" type="Sprite"]
+position = Vector2( 2.11758e-22, 9 )
 scale = Vector2( 0.2, 0.05 )
 texture = ExtResource( 1 )
 centered = false
@@ -14,12 +18,17 @@ offset = Vector2( 0, -185 )
 flip_h = true
 script = ExtResource( 2 )
 
-[node name="hitbox" type="Area2D" parent="."]
+[node name="Hitbox" type="Area2D" parent="."]
+scale = Vector2( -2.01236, 0.733074 )
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="hitbox"]
-position = Vector2( 505, 10 )
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox"]
+position = Vector2( -253.434, 27.2823 )
 shape = SubResource( 1 )
 
-[node name="Tween" type="Tween" parent="."]
+[node name="Point" type="Area2D" parent="."]
+position = Vector2( 1005, 0 )
+scale = Vector2( -2.06953, 1.99061 )
 
-[connection signal="tween_all_completed" from="Tween" to="." method="_on_Tween_tween_all_completed"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Point"]
+scale = Vector2( -0.283655, -1.02249 )
+shape = SubResource( 2 )
