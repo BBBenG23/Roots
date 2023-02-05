@@ -1,6 +1,27 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://scripts/Overlay.gd" type="Script" id=1]
+[ext_resource path="res://Bad_End.png" type="Texture" id=2]
+[ext_resource path="res://Untitled_Artwork3.png" type="Texture" id=3]
+[ext_resource path="res://kirifont/KiriFont.ttf" type="DynamicFontData" id=4]
+
+[sub_resource type="DynamicFont" id=3]
+size = 100
+font_data = ExtResource( 4 )
+
+[sub_resource type="DynamicFont" id=4]
+size = 60
+font_data = ExtResource( 4 )
+
+[sub_resource type="DynamicFontData" id=5]
+font_path = "res://Plante.ttf"
+
+[sub_resource type="DynamicFont" id=1]
+font_data = SubResource( 5 )
+
+[sub_resource type="DynamicFont" id=2]
+size = 70
+font_data = ExtResource( 4 )
 
 [node name="Overlay" type="Control"]
 anchor_right = 1.0
@@ -22,3 +43,146 @@ margin_top = 30.0
 margin_right = 290.0
 margin_bottom = 40.0
 color = Color( 0.792157, 0.27451, 0.27451, 1 )
+
+[node name="Gameover" type="ColorRect" parent="."]
+visible = false
+margin_right = 2940.0
+margin_bottom = 1676.0
+color = Color( 0.231373, 0.231373, 0.231373, 1 )
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Gameover"]
+anchor_right = 1.0
+margin_left = 63.0
+margin_top = 60.0
+margin_right = -1270.0
+margin_bottom = 176.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_fonts/normal_font = SubResource( 3 )
+text = "gameover"
+
+[node name="RichTextLabel2" type="RichTextLabel" parent="Gameover"]
+anchor_right = 1.0
+margin_left = 75.0
+margin_top = 493.0
+margin_right = -1141.0
+margin_bottom = 558.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_fonts/normal_font = SubResource( 4 )
+text = "Press R to restart"
+
+[node name="Good_ending" type="Control" parent="."]
+visible = false
+margin_right = 40.0
+margin_bottom = 40.0
+
+[node name="ColorRect" type="ColorRect" parent="Good_ending"]
+margin_left = 932.0
+margin_top = -25.0
+margin_right = 2472.0
+margin_bottom = 1565.0
+
+[node name="ColorRect2" type="ColorRect" parent="Good_ending"]
+margin_left = -349.0
+margin_top = 1230.0
+margin_right = 2160.0
+margin_bottom = 1666.0
+
+[node name="Good_ending" type="TextureRect" parent="Good_ending"]
+margin_right = 1121.0
+margin_bottom = 1308.0
+rect_scale = Vector2( 1.25, 1.25 )
+texture = ExtResource( 3 )
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Good_ending"]
+margin_left = 999.0
+margin_top = 85.0
+margin_right = 2066.0
+margin_bottom = 1516.0
+custom_colors/default_color = Color( 0, 0, 0, 1 )
+custom_fonts/mono_font = SubResource( 1 )
+custom_fonts/normal_font = SubResource( 2 )
+text = "You turn back into a cat after drinking from the Holy Grail. And the human too I guess.
+With their power no longer sealed, the cat usurped control of the world from the rabbits. After rooting around in a box of course.
+"
+
+[node name="Bad_ending" type="Control" parent="."]
+visible = false
+margin_right = 40.0
+margin_bottom = 40.0
+
+[node name="Bad_ending3" type="TextureRect" parent="Bad_ending"]
+anchor_left = 0.006
+anchor_top = 0.005
+anchor_right = 0.006
+anchor_bottom = 0.005
+margin_left = 2643.76
+margin_top = 0.8
+margin_right = 4899.76
+margin_bottom = 3788.8
+grow_horizontal = 2
+grow_vertical = 2
+rect_rotation = 90.0
+rect_scale = Vector2( 0.7, 0.7 )
+texture = ExtResource( 2 )
+expand = true
+stretch_mode = 1
+
+[node name="Bad_ending2" type="TextureRect" parent="Bad_ending"]
+anchor_left = 0.006
+anchor_top = 0.005
+anchor_right = 0.006
+anchor_bottom = 0.005
+margin_left = -5.24
+margin_top = -4.2
+margin_right = 3751.76
+margin_bottom = 1659.8
+grow_horizontal = 2
+grow_vertical = 2
+rect_scale = Vector2( 0.7, 0.7 )
+texture = ExtResource( 2 )
+expand = true
+stretch_mode = 1
+
+[node name="Bad_ending" type="TextureRect" parent="Bad_ending"]
+anchor_left = 0.006
+anchor_right = 0.006
+anchor_bottom = 0.005
+margin_left = -5.24
+margin_top = -4.0
+margin_right = 2930.76
+margin_bottom = 1700.0
+grow_horizontal = 2
+grow_vertical = 2
+rect_scale = Vector2( 0.7, 0.7 )
+texture = ExtResource( 2 )
+expand = true
+stretch_mode = 1
+
+[node name="Bad_ending2" type="TextureRect" parent="Bad_ending/Bad_ending"]
+anchor_left = 0.006
+anchor_top = 0.005
+anchor_right = 2.007
+anchor_bottom = 1.951
+margin_left = -24.7589
+margin_top = -1.37814
+margin_right = -3692.69
+margin_bottom = -1613.5
+grow_horizontal = 2
+grow_vertical = 2
+rect_scale = Vector2( 1.02, 1.025 )
+texture = ExtResource( 2 )
+expand = true
+stretch_mode = 3
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Bad_ending/Bad_ending"]
+margin_left = 1827.14
+margin_top = 287.143
+margin_right = 2906.14
+margin_bottom = 1718.14
+custom_fonts/mono_font = SubResource( 1 )
+custom_fonts/normal_font = SubResource( 2 )
+text = "You manage to win, but the human did not survive. The Holy Grail responds only to humans and you are unable to use it. You are now stuck in the human’s body forever, cursed to wander the wastelands of this apocalyptic world forever and become the new root of all evil."

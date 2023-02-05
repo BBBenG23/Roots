@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/bunny.jpg-44179d2b9c0b1792d5ddbaffb9955546.stex"
+path="res://.import/Untitled_Artwork.png-abf834c8d878a91cc31239853bd8ec74.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/bunny.jpg"
-dest_files=[ "res://.import/bunny.jpg-44179d2b9c0b1792d5ddbaffb9955546.stex" ]
+source_file="res://Untitled_Artwork.png"
+dest_files=[ "res://.import/Untitled_Artwork.png-abf834c8d878a91cc31239853bd8ec74.stex" ]
 
 [params]
 

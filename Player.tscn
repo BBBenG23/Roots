@@ -1,27 +1,41 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://scripts/Player.gd" type="Script" id=1]
-[ext_resource path="res://sprites/watermelonboy.jpg" type="Texture" id=2]
+[ext_resource path="res://Untitled_Artwork.png" type="Texture" id=2]
 [ext_resource path="res://outline.tres" type="Material" id=3]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 16, 21.5 )
+extents = Vector2( 71.5, 147 )
+
+[sub_resource type="CapsuleShape2D" id=2]
+radius = 54.0
+height = 152.0
 
 [node name="Player" type="KinematicBody2D"]
 script = ExtResource( 1 )
-speed = 150
-max_water = 100
-max_health = 100
+speed = 380
+max_water = 105
+max_health = 70
 
 [node name="Sprite" type="Sprite" parent="."]
 material = ExtResource( 3 )
-scale = Vector2( 0.05, 0.05 )
 texture = ExtResource( 2 )
+region_enabled = true
+region_rect = Rect2( 1430, 1010, 148, 300 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 visible = false
-scale = Vector2( 1.35, 1.61 )
+position = Vector2( 0.5, 2 )
 shape = SubResource( 1 )
 
 [node name="Camera2D" type="Camera2D" parent="."]
 current = true
+limit_left = 0
+limit_top = 0
+limit_right = 3000
+limit_bottom = 2000
+
+[node name="Hurtbox" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hurtbox"]
+shape = SubResource( 2 )

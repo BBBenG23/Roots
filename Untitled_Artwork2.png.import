@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/watermelonboy.jpg-91e83f581fc90c63d90522cfc1699c75.stex"
+path="res://.import/Untitled_Artwork2.png-075a689683f8bcedd8b4accd46fa1589.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/watermelonboy.jpg"
-dest_files=[ "res://.import/watermelonboy.jpg-91e83f581fc90c63d90522cfc1699c75.stex" ]
+source_file="res://Untitled_Artwork2.png"
+dest_files=[ "res://.import/Untitled_Artwork2.png-075a689683f8bcedd8b4accd46fa1589.stex" ]
 
 [params]
 
